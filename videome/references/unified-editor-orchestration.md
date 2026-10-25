@@ -51,3 +51,11 @@ Use the real project slug created by TakeOff's `./edit new` workflow. Never rend
 
 ## VideoCut capability gate
 The upstream VideoCut repository documents a Codex plugin and a separate product runtime. Its four business operations (cut, subtitle, visual, export) are **not** guaranteed to be callable as Claude Code commands. Treat VideoCut as advisory/unavailable until a local compatible runtime, API/CLI contract, and operation-level tests are independently verified. Never invoke guessed CLI endpoints, run bootstrap installers, or treat its README as a Claude Code skill.
+
+## Mandatory no-slideshow production gate
+- No static image as a full-frame scene, no still-photo montage, no motionless cards, no static title slide, no black-background text slide.
+- Images/logos/character sheets are usable only as video-effects elements composited over live moving footage, or as source layers in genuinely animated motion graphics with persistent motion.
+- No fake Ken Burns pan/zoom used solely to disguise a still slide.
+- Opening and closing must use moving footage or substantive animation, not a static slate.
+- Reviewer Agent 4 must reject any scene with no meaningful motion, any slideshow-like transition, or filler cards. Detect freeze/near-static sections during QA, then inspect visually.
+- If the unique video footage and original motion animation cannot fill the duration, clearly report the deficit and request additional clips or permission to shorten. Do not invent video coverage or reuse shots when prohibited.
