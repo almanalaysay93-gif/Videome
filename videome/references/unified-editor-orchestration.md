@@ -37,3 +37,17 @@ The plan is an interchange artifact, **not** proof that a provider supports each
 
 ## Failure handling
 If TakeOff or VideoCut is missing or incompatible, continue VideoMe's creative planning and available native operations; do not claim a final rendered video. Report missing capability, exact preflight result, and next installation step.
+
+## Verified TakeOff command contract (requires installed upstream)
+TakeOff's published README documents `./edit doctor`, `./edit storyboard <slug>`, `./edit render <slug> [version]`, and `./edit qa <slug> [version]`. The guarded adapter at `videome/tools/takeoff_adapter.py` invokes only those commands, with argument validation and captured exit status. It does not run upstream setup or assume the environment is configured. On a supported Mac, after reviewing and running TakeOff's setup, execute:
+```bash
+python3 videome/tools/takeoff_adapter.py doctor --root vendors/claude-shortform-video-editor
+python3 videome/tools/takeoff_adapter.py storyboard --slug demo
+# Only after storyboard approval:
+python3 videome/tools/takeoff_adapter.py render --slug demo --version v1
+python3 videome/tools/takeoff_adapter.py qa --slug demo --version v1
+```
+Use the real project slug created by TakeOff's `./edit new` workflow. Never render before storyboard approval. The adapter does not certify output quality; inspect QA and media separately.
+
+## VideoCut capability gate
+The upstream VideoCut repository documents a Codex plugin and a separate product runtime. Its four business operations (cut, subtitle, visual, export) are **not** guaranteed to be callable as Claude Code commands. Treat VideoCut as advisory/unavailable until a local compatible runtime, API/CLI contract, and operation-level tests are independently verified. Never invoke guessed CLI endpoints, run bootstrap installers, or treat its README as a Claude Code skill.
