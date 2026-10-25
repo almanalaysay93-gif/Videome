@@ -42,3 +42,7 @@ Read only the relevant file(s):
 ## Output for technique advice
 
 For each chosen effect, provide: **why/where it works**, **beat-by-beat build recipe**, **recommended materials/tools**, **timing/readability notes**, and the **Agent 3 build brief**. For actual production, follow the four-agent team and production contract and return the usable media/project files, not just a concept.
+
+## Optional unified editing orchestration
+
+For requests involving storyboard-to-render editing, multi-provider timelines, TakeOff, or VideoCut, read [unified-editor-orchestration.md](references/unified-editor-orchestration.md) before Agent 3 production. Keep VideoMe as the sole user-facing skill and retain its existing four-agent workflow. Run `python3 videome/tools/editor_bridge.py doctor` from the repository root (or the corresponding installed skill path) before relying on optional providers. Vendor presence is not evidence of a working renderer. See [UNIFIED_EDITOR_SETUP.md](UNIFIED_EDITOR_SETUP.md) for setup and test commands.
